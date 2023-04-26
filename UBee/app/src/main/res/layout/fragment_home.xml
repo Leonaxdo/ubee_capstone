@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="315dp">
+
+        <ImageView
+            android:id="@+id/man_img"
+            android:layout_width="173dp"
+            android:layout_height="245dp"
+            android:layout_marginTop="92dp"
+            android:src="@drawable/ic_home_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/now_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="76dp"
+            android:fontFamily="@font/spoqahansansneobold"
+            android:text="TODAY (1월 1일) 까지"
+            android:textColor="#abd8eb"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.082"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_firstLine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:text="우:비 사용자분들이"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.083"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/now_date" />
+
+        <TextView
+            android:id="@+id/text_treeNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/spoqahansansneobold"
+            android:text="123그루"
+            android:textColor="#1a94d3"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/text_tree"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_firstLine" />
+
+        <TextView
+            android:id="@+id/text_tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:text="의 나무를"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.304"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_firstLine" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:text="심어 주셨습니다."
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_tree" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/announce_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="343dp"
+            android:layout_height="41dp"
+            android:background="@drawable/announce_btn_ripple"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:stateListAnimator="@null"
+            android:text="@string/text_announce_cost"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:backgroundTint="@null"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/ic_announce"
+            app:iconTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.012" />
+
+        <ImageButton
+            android:id="@+id/mapImg_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="26dp"
+            android:background="@drawable/search_map_btn"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.68"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.208" />
+
+        <ImageButton
+            android:id="@+id/qr_btn"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="26dp"
+            android:background="@drawable/qr_scan_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.21" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/event_viewPager"
+            android:layout_width="360dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.604"
+            tools:listitem="@layout/event_list_item">
+        </androidx.viewpager2.widget.ViewPager2>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/viewpager_tap"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginLeft="170dp"
+            android:layout_marginRight="170dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_viewPager"
+            app:layout_constraintVertical_bias="0.068"
+            app:tabBackground="@drawable/selector_dot"
+            app:tabGravity="center"
+            app:tabIndicatorGravity="center"
+            app:tabIndicatorHeight="0dp" />
+
+        <Button
+            android:id="@+id/how_use_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/how_to_btn_ripple"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_viewPager"
+            app:layout_constraintVertical_bias="0.571" />
+
+        <Button
+            android:id="@+id/live_chat_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/live_chat_btn_ripple"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/event_viewPager"
+            app:layout_constraintVertical_bias="0.555" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

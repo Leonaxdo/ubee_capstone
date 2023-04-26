@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_report"
+        android:title="공지사항" />
+    <item
+        android:id="@+id/item_event"
+        android:title="이벤트" />
+    <item
+        android:id="@+id/item_notice"
+        android:title="고객센터" />
+    <item
+        android:id="@+id/item_service_center"
+        android:title="설정" />
+
+</menu>

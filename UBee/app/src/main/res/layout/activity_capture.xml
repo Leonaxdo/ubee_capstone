@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_qr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/toolbar_bg"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:text="@string/qr_scan"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#646363">
+
+        <com.journeyapps.barcodescanner.DecoratedBarcodeView
+            android:id="@+id/customBarcodeView"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="136dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:zxing_scanner_layout="@layout/custom_qrscan" />
+
+        <EditText
+            android:id="@+id/editTextQrCode"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/qr_selector"
+            android:drawableStart="@drawable/ic_qr_scan_keyboard"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:hint="@string/qr_code_input"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:paddingEnd="10dp"
+            android:textAlignment="center"
+            android:textColorHint="#999999"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/customBarcodeView"
+            tools:ignore="RtlSymmetry" />
+
+        <Button
+            android:id="@+id/lamp_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/selector_lamp_btn"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:text="손전등"
+            android:textColor="@drawable/selector_lamp"
+            android:textSize="14sp"
+            app:backgroundTint="@null"
+            app:icon="@drawable/ic_lamp"
+            app:iconTint="@drawable/selector_lamp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

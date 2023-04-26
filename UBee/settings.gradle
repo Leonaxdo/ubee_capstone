@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+
+        // add naver map API
+        jcenter()
+        maven {
+            url 'https://naver.jfrog.io/artifactory/maven/'
+        }
+
+        // 슬라이드 뷰
+        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "UBee"
+include ':app'

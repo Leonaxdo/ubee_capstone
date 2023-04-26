@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sothree.slidinguppanel.SlidingUpPanelLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:gravity="bottom"
+    app:umanoDragView="@id/slide_layout">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- TODO: Update blank fragment layout -->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_map"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toolbar_bg"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="@string/map_string"
+                android:layout_gravity="center"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+            <EditText
+                android:id="@+id/searchMap"
+                android:layout_width="360dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:background="@drawable/map_search_selector"
+                android:hint="@string/map_search_string"
+                android:textColorHint="#999999"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:textSize="14sp"
+                android:paddingStart="17dp"
+                android:paddingEnd="17dp"
+                android:drawableEnd="@drawable/ic_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.025"
+                tools:ignore="RtlSymmetry" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/go_cur_btn"
+                android:layout_marginTop="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:textColor="@color/white"
+                android:text="현재 위치로 이동"
+                android:textSize="12sp"
+                android:fontFamily="@font/spoqahansansneoregular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.949"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.naver.maps.map.MapView
+                android:id="@+id/navermap_map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/slide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <TextView
+            android:id="@+id/ub_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="우산이 있는 기계를 선택해 주세요."
+            android:textSize="16sp"
+            android:fontFamily="@font/spoqahansansneobold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ub_sort_place"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:text="가게를 선택해주세요."
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ub_status_text" />
+
+        <TextView
+            android:id="@+id/ub_place_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="25sp"
+            android:fontFamily="@font/spoqahansansneobold"
+            android:text="가게 이름"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ub_sort_place" />
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ub_place_name">
+
+            <TextView
+                android:id="@+id/ub_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:textStyle="bold"
+                android:text="주소"
+                android:layout_weight="1.7"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ub_address_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="자세한 주소"
+                android:layout_weight="8.3"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:id="@+id/linear_contact"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/ub_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1.7"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="영업시간"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/ub_time_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="8.3"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="자세한 시간"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linear_contact">
+
+            <TextView
+                android:id="@+id/ub_contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1.7"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="연락처"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/ub_contact_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="8.3"
+                android:fontFamily="@font/spoqahansansneoregular"
+                android:text="자세한 연락처"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/ub_borrow_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:background="@color/zxing_transparent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/btn_borrow_ub_disable" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.sothree.slidinguppanel.SlidingUpPanelLayout>
