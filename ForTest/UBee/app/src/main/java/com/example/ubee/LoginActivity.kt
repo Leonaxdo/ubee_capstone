@@ -1,5 +1,6 @@
 package com.example.ubee
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ubee.databinding.ActivityAnnounceBinding
@@ -16,5 +17,11 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
+
+        binding.signUpBtn.setOnClickListener{
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

@@ -12,4 +12,8 @@
     <string name="qr_code">우산에 있는 QR Code를 스캔해주세요.</string>
     <string name="login_id_hint"><font size="16">아이디</font></string>
     <string name="login_pw_hint"><font size="16">비밀번호</font></string>
+    <string name="signup_name_hint"><font size="16">이름 입력</font></string>
+    <string name="signup_ssn_hint"><font size="16">주민등록번호 앞 6자리</font></string>
+    <string name="signup_email_hint"><font size="16">이메일 입력</font></string>
+    <string name="signup_signnum_hint"><font size="16">인증번호 입력</font></string>
 </resources>
