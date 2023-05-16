@@ -1,5 +1,3 @@
-//test Hello
-//test Hello2
 package com.example.ubee
 
 import android.content.DialogInterface
