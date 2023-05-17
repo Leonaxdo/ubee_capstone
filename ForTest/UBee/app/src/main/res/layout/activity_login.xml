@@ -64,7 +64,7 @@
                 app:srcCompat="@drawable/ic_app_icon" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/authEmailEditView"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="48dp"
@@ -79,7 +79,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/authPasswordEditView"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
@@ -92,11 +92,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+                app:layout_constraintTop_toBottomOf="@+id/authEmailEditView"
                 app:layout_constraintVertical_bias="0.017" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/loginBtn"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
@@ -107,7 +107,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+                app:layout_constraintTop_toBottomOf="@+id/authPasswordEditView"
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
@@ -120,7 +120,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toEndOf="@+id/imageView4"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
             <TextView
                 android:id="@+id/find_id_btn"
@@ -132,7 +132,7 @@
                 android:textColor="#000000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -141,7 +141,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
                 app:layout_constraintStart_toEndOf="@+id/find_id_btn"
-                app:layout_constraintTop_toBottomOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn"
                 app:srcCompat="@drawable/login_vertical_line" />
 
             <ImageView
@@ -151,7 +151,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="40dp"
                 app:layout_constraintStart_toEndOf="@+id/find_pw_btn"
-                app:layout_constraintTop_toBottomOf="@+id/button"
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn"
                 app:srcCompat="@drawable/login_vertical_line" />
 
             <TextView
@@ -165,7 +165,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.145"
                 app:layout_constraintStart_toEndOf="@+id/imageView5"
-                app:layout_constraintTop_toBottomOf="@+id/button" />
+                app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -100,22 +100,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="350dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="19dp"
-        android:backgroundTint="#E2E2E2"
-        android:ems="10"
-        android:hint="@string/signup_signnum_hint"
-        android:inputType="number"
-        android:textColorHint="#E2E2E2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName4" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/authEmailEditView"
         android:layout_width="350dp"
         android:layout_height="43dp"
         android:layout_marginTop="10dp"
@@ -127,6 +114,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/authPasswordEditView"
+        android:layout_width="350dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#E2E2E2"
+        android:ems="10"
+        android:hint="@string/signup_password_hint"
+        android:inputType="textPassword"
+        android:textColorHint="#E2E2E2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/authEmailEditView" />
 
     <EditText
         android:id="@+id/editTextTextPersonName3"
@@ -213,7 +214,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/goSignInBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/signup_confirm_ripple"
@@ -224,27 +225,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="85dp"
-        android:layout_height="30dp"
-        android:background="@drawable/signup_email_request"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName4"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="85dp"
-        android:layout_height="30dp"
-        android:background="@drawable/signup_email_confirm"
-        app:backgroundTint="@null"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextPersonName5"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
