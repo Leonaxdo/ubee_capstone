@@ -30,6 +30,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.findPwBtn.setOnClickListener {
+            val intent = Intent(this, PasswordSearchActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.loginBtn.setOnClickListener {
             val email = binding.authEmailEditView.text.toString()
             val password = binding.authPasswordEditView.text.toString()
