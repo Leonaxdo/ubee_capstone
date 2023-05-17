@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "67116539409",
+    "project_id": "ubee-212af",
+    "storage_bucket": "ubee-212af.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:67116539409:android:622cdf6b97bb65b6b69bb0",
+        "android_client_info": {
+          "package_name": "com.example.ubee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "67116539409-o6uth40ukl964cab5suqou4ue32anhah.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ubee",
+            "certificate_hash": "a60d6203cc7118c1d51f028257513b16ec293b73"
+          }
+        },
+        {
+          "client_id": "67116539409-ftchcho4je563k6p458fof9jvb5j7o3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbihcrr0tt-8nIjnl3p3QyYeEal7KTtqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "67116539409-ftchcho4je563k6p458fof9jvb5j7o3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
