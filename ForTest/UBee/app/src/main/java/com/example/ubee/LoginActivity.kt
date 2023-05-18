@@ -30,6 +30,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.findPwBtn.setOnClickListener {
+            val intent = Intent(this, PasswordSearchActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.loginBtn.setOnClickListener {
             val email = binding.authEmailEditView.text.toString()
             val password = binding.authPasswordEditView.text.toString()
@@ -37,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if(task.isSuccessful){
                         Toast.makeText(this, "로그인 성공", Toast.LENGTH_LONG).show()
-                        val intent = Intent(this, HomeFragment::class.java)
+                        val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     }else {
                         Toast.makeText(this, "로그인 실패", Toast.LENGTH_LONG).show()
