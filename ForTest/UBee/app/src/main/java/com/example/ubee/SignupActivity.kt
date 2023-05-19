@@ -35,7 +35,7 @@ class SignupActivity : AppCompatActivity() {
             MyApplication.auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this) { task ->
                     if(task.isSuccessful){
-                        saveStore()
+                        saveStore() //회원가입 버튼을 누를경우 입력된 데이터들을 firebase 저장
                         MyApplication.auth.currentUser?.sendEmailVerification()
                             ?.addOnCompleteListener { sendTask ->
                                 if(sendTask.isSuccessful){
@@ -79,7 +79,7 @@ class SignupActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-
+    //firebase 데이터 저장
     private fun saveStore(){
         val data = mapOf(
             "email" to binding.authEmailEditView.text.toString(),
@@ -88,7 +88,7 @@ class SignupActivity : AppCompatActivity() {
         )
 
         MyApplication.db.collection("userData")
-            .document(binding.editTextTextPersonName.text.toString())
+            .document(binding.authEmailEditView.text.toString())
             .set(data)
     }
 }

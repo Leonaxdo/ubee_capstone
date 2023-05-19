@@ -5,17 +5,23 @@ import android.content.Intent
 import android.media.metrics.Event
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextWatcher
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
+import com.example.ubee.MyApplication.Companion.auth
 import com.example.ubee.databinding.ActivityMainBinding
 import com.example.ubee.databinding.DrawerHeadBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import kotlin.math.E
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -25,6 +31,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     // 로그인 확인 변수
     var auth = 0
+    // firestore데이터 가져오기
+    val db = Firebase.firestore
+    var uid = "null"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +62,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // 로그인 권한 가져오기
         auth = intent.getIntExtra("auth", 0)
+        // 사용자 이메일정보 받아오기
+        uid = intent.getStringExtra("uid").toString()
+
+        // 로그인 할 경우, 메뉴 상단에 들어갈 name값 변경
+        if(auth == 1) {
+            var headerView = binding.mainNavView.getHeaderView(0)
+            val nameText = headerView.findViewById<TextView>(R.id.clientName)
+            db.collection("userData")
+                .get()
+                .addOnCompleteListener { task ->
+                    if(task.isSuccessful){
+                        for(i in task.result!!){
+                            if(i.id == uid){
+                                val userName = i.data["name"].toString()
+                                nameText.setText(userName)
+                            }
+                        }
+                    }
+                }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -69,6 +99,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.menu_select -> {
                 binding.mainDrawable.openDrawer(GravityCompat.END)
 
+
                 // 권한 있으면 헤더 바꾸기
                 if(auth == 1) {
                     var headerView = binding.mainNavView.getHeaderView(0)
@@ -76,11 +107,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     val btn2 = headerView.findViewById<TextView>(R.id.draw_login_info)
                     val btn3 = headerView.findViewById<TextView>(R.id.clientName)
                     val btn4 = headerView.findViewById<TextView>(R.id.mypage)
+
                     btn1.visibility = View.GONE
                     btn2.visibility = View.GONE
                     btn3.visibility = View.VISIBLE
                     btn4.visibility = View.VISIBLE
+
                 }
+
 
                 super.onOptionsItemSelected(item)
             }
