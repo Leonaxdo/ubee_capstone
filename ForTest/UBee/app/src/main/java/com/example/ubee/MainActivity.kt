@@ -5,6 +5,7 @@ import android.content.Intent
 import android.media.metrics.Event
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import com.example.ubee.databinding.ActivityMainBinding
+import com.example.ubee.databinding.DrawerHeadBinding
 import com.google.android.material.navigation.NavigationView
 import kotlin.math.E
 
@@ -20,6 +22,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private lateinit var binding: ActivityMainBinding
     lateinit var navigationView: NavigationView
+
+    // 로그인 확인 변수
+    var auth = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +49,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
+
+        // 로그인 권한 가져오기
+        auth = intent.getIntExtra("auth", 0)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -60,6 +68,20 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             // 메뉴 버튼이 눌렸을 때 옆 draw 메뉴가 나오도록 함.
             R.id.menu_select -> {
                 binding.mainDrawable.openDrawer(GravityCompat.END)
+
+                // 권한 있으면 헤더 바꾸기
+                if(auth == 1) {
+                    var headerView = binding.mainNavView.getHeaderView(0)
+                    val btn1 = headerView.findViewById<TextView>(R.id.draw_login)
+                    val btn2 = headerView.findViewById<TextView>(R.id.draw_login_info)
+                    val btn3 = headerView.findViewById<TextView>(R.id.clientName)
+                    val btn4 = headerView.findViewById<TextView>(R.id.mypage)
+                    btn1.visibility = View.GONE
+                    btn2.visibility = View.GONE
+                    btn3.visibility = View.VISIBLE
+                    btn4.visibility = View.VISIBLE
+                }
+
                 super.onOptionsItemSelected(item)
             }
             else ->

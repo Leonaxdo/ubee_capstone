@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
                     if(task.isSuccessful){
                         Toast.makeText(this, "로그인 성공", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("auth", 1)
                         startActivity(intent)
                     }else {
                         Toast.makeText(this, "로그인 실패", Toast.LENGTH_LONG).show()
