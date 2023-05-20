@@ -7,6 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="uv_1">#FF54B1FF</color>
+    <color name="uv_2">#FFFAD98F</color>
+    <color name="uv_3">#FFFD8D3C</color>
+    <color name="uv_4">#FFC30000</color>
+    <color name="uv_5">#FF54248E</color>
 
 
     <color name="light_blue">#ABD8EB</color>

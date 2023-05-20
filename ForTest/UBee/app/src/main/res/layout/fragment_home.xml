@@ -95,16 +95,45 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_tree" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/uv_frame"
+            android:layout_width="158dp"
+            android:layout_height="30dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/uv_background"
+            android:fontFamily="@font/spoqahansansneoregular"
+            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:text="자외선 지수: "
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/imageView6"
             app:layout_constraintEnd_toStartOf="@+id/man_img"
             app:layout_constraintHorizontal_bias="0.40"
-            app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/force_uv_icon" />
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/uv_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="97dp"
+            android:text="@string/uv_num"
+            app:layout_constraintBottom_toBottomOf="@+id/uv_frame"
+            app:layout_constraintStart_toStartOf="@+id/uv_frame"
+            app:layout_constraintTop_toTopOf="@+id/uv_frame" />
+
+        <ImageView
+            android:id="@+id/uv_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="128dp"
+            android:src="@drawable/uv_icon"
+            app:tint="@color/uv_1"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/uv_frame"
+            app:layout_constraintStart_toStartOf="@+id/uv_frame"
+            app:layout_constraintTop_toTopOf="@+id/uv_frame" />
 
         <ImageView
             android:id="@+id/imageView6"

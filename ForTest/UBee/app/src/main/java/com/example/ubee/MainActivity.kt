@@ -12,10 +12,14 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.GravityCompat
+import com.example.ubee.MyApplication.Companion.auth
 import com.example.ubee.databinding.ActivityMainBinding
 import com.example.ubee.databinding.DrawerHeadBinding
 import com.google.android.material.navigation.NavigationView
+import retrofit2.Call
+import retrofit2.Callback
 import kotlin.math.E
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
@@ -52,6 +56,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         // 로그인 권한 가져오기
         auth = intent.getIntExtra("auth", 0)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
