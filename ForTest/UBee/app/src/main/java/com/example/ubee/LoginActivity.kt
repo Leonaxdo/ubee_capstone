@@ -44,6 +44,8 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "로그인 성공", Toast.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("auth", 1)
+                        //로그인때 입력한 아이디를 mainActivity에 넘겨줘서, 그 아이디값과 파이어베이스 대조 후, menu에 사용자이름 변경
+                        intent.putExtra("uid", binding.authEmailEditView.text.toString())
                         startActivity(intent)
                     }else {
                         Toast.makeText(this, "로그인 실패", Toast.LENGTH_LONG).show()
