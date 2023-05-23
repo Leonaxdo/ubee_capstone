@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -60,10 +61,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(intent)
         }
 
+
         // 로그인 권한 가져오기
         auth = intent.getIntExtra("auth", 0)
-        // 사용자 이메일정보 받아오기
+        // 사용자 이메일 정보 받아오기
         uid = intent.getStringExtra("uid").toString()
+
+        // 마이페이지 버튼 클릭시
+        var myPageButton = headerView.findViewById<Button>(R.id.mypage)
+        myPageButton.setOnClickListener {
+            val intent = Intent(this, MyPageActivity::class.java)
+            intent.putExtra("uid", uid)
+            startActivity(intent)
+        }
 
         // 로그인 할 경우, 메뉴 상단에 들어갈 name값 변경
         if(auth == 1) {
