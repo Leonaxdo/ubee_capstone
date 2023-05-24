@@ -3,7 +3,7 @@ package com.example.ubee
 import com.google.gson.annotations.SerializedName
 
 
-data class EmgMedResponse(
+data class UvResponse(
     @field:SerializedName("response")
     val response: Response?
 )
