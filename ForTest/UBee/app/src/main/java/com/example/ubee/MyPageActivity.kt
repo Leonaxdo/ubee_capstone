@@ -52,12 +52,6 @@ class MyPageActivity : AppCompatActivity() {
                 }
             }
 
-        // 완료버튼 누를 경우 메인화면으로 이동
-        binding.goMainActivity.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
 
         //툴바 셋팅
         val toolbar = binding.toolbarMap

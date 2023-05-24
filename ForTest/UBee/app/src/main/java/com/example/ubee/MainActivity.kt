@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -68,7 +69,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         uid = intent.getStringExtra("uid").toString()
 
         // 마이페이지 버튼 클릭시
-        var myPageButton = headerView.findViewById<Button>(R.id.mypage)
+        var myPageButton = headerView.findViewById<Button>(R.id.btn_mypage)
         myPageButton.setOnClickListener {
             val intent = Intent(this, MyPageActivity::class.java)
             intent.putExtra("uid", uid)
@@ -116,13 +117,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     val btn1 = headerView.findViewById<TextView>(R.id.draw_login)
                     val btn2 = headerView.findViewById<TextView>(R.id.draw_login_info)
                     val btn3 = headerView.findViewById<TextView>(R.id.clientName)
-                    val btn4 = headerView.findViewById<TextView>(R.id.mypage)
+                    val btn4 = headerView.findViewById<Button>(R.id.btn_mypage)
+                    val btn5 = headerView.findViewById<TextView>(R.id.rank)
+                    val btn6 = headerView.findViewById<ImageView>(R.id.header_icon)
 
                     btn1.visibility = View.GONE
                     btn2.visibility = View.GONE
                     btn3.visibility = View.VISIBLE
                     btn4.visibility = View.VISIBLE
-
+                    btn5.visibility = View.VISIBLE
+                    btn6.visibility = View.VISIBLE
                 }
 
 

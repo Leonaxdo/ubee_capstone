@@ -36,28 +36,55 @@
         android:id="@+id/clientName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/spoqahansansneobold"
         android:text="로그인 허용 (이름)"
         android:textSize="16sp"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/header_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/mypage"
+    <TextView
+        android:id="@+id/rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="4dp"
-        android:layout_marginStart="16dp"
         android:fontFamily="@font/spoqahansansneoregular"
-        android:text="마이페이지"
+        android:text="일반등급"
         android:textSize="12sp"
         android:visibility="gone"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/header_icon"
         app:layout_constraintTop_toBottomOf="@+id/clientName" />
 
+
+    <Button
+        android:id="@+id/btn_mypage"
+        android:layout_width="70dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/login_confirm_btn_ripple"
+        android:fontFamily="@font/spoqahansansneoregular"
+        android:padding="0dp"
+        android:text="마이페이지"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/header_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/header_icon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
