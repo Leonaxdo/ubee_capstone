@@ -70,7 +70,7 @@ class HomeFragment : Fragment() {
         }
 
 
-        // 자외선 처리 (수정이 필요: 왜인지 모르겠지만 onCreateView에 넣었을 때 이 함수가 2번 호출되어 api가 두번 호출된다)
+        // 자외선 처리
         retrofitWork(uv_time)
 
         // 강수량 처리
