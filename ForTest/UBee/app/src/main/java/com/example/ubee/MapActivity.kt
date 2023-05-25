@@ -150,7 +150,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             "카페",
             "경기도 용인시 수지구 죽전로 144번길 15-14",
             "월~금: 10 ~ 22시, 토: 11 ~ 21시, 일: 11 ~ 22시",
-            "031-889-1319"
+            "031-889-1319",
+            "아메리카노",
+            "딸기라떼",
+            "허니브레드",
+            "3,500원",
+            "4,800원",
+            "6,000원"
         )
         setMarker(
             37.32325893183231,
@@ -160,7 +166,13 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             "음식점",
             "경기도 용인시 수지구 죽전동 1323-7",
             "이용시간 미정",
-            "031-261-9289"
+            "031-261-9289",
+            "두부김치",
+            "콩나물불고기",
+            "김치찌개",
+            "12,000원",
+            "12,000원",
+            "9,000원"
         )
         setMarker(
             37.3248727671386,
@@ -194,8 +206,14 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         storeType: String,
         address: String,
         time: String,
-        contact: String
-    ) {
+        contact: String,
+        menu1: String = "-",
+        menu2: String = "-",
+        menu3: String = "-",
+        price1: String = "-",
+        price2: String = "-",
+        price3: String = "-",
+        ) {
         val marker = Marker()
         marker.isIconPerspectiveEnabled
         marker.position = LatLng(lat, lng)
@@ -221,6 +239,12 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.ubAddressInfo.text = address
             binding.ubTimeInfo.text = time
             binding.ubContactInfo.text = contact
+            binding.ubMenuItem1.text = menu1
+            binding.ubMenuItem2.text = menu2
+            binding.ubMenuItem3.text = menu3
+            binding.ubMenuListPrice1.text = price1
+            binding.ubMenuListPrice2.text = price2
+            binding.ubMenuListPrice3.text = price3
 
             if (ubCnt < 5) {
                 binding.ubStatusText.text = "우산이 5개 미만으로 남았습니다."

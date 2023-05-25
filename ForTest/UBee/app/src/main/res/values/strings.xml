@@ -20,4 +20,5 @@
     <string name="signup_signnum_hint"><font size="16">인증번호 입력</font></string>
     <string name="uv_num"><font color="#E01919" size="16">0</font></string>
     <string name="rain_num"><font color="#1757A6" size="16">0</font></string>
+    <string name="ub_service_banner"><font color="#41A6DA" size="15">우비 예약 시 </font><font color="#0085C9" size ="15">사이드 메뉴 1개 제공</font></string>
 </resources>

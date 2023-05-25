@@ -189,8 +189,8 @@ class HomeFragment : Fragment() {
 //                        Log.d("TAG", response.body().toString())
                         result_rain = response.body()?.response?.body?.items?.item?.get(2)?.obsrValue ?: "-1"
 //                        Log.d("pasakResult_rain", "$result_rain")
-                        Log.d("pasakDate_rain", date)
-                        Log.d("pasakTime_rain", time)
+//                        Log.d("pasakDate_rain", date)
+//                        Log.d("pasakTime_rain", time)
 
                         binding.rainNum.text = "$result_rain" // 강수량 출력
                         binding.rainNum.setTextColor(Color.BLUE) // 강수량 색상 지정

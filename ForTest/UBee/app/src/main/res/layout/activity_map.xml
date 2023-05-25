@@ -106,130 +106,278 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/ub_sort_place"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="20dp"
-            android:text="가게를 선택해주세요."
-            android:fontFamily="@font/spoqahansansneoregular"
-            android:textColor="?android:attr/textColorPrimary"
-            android:textSize="15sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ub_status_text" />
-
-        <TextView
-            android:id="@+id/ub_place_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:textSize="25sp"
-            android:fontFamily="@font/spoqahansansneobold"
-            android:text="가게 이름"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ub_sort_place" />
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ub_place_name">
-
-            <TextView
-                android:id="@+id/ub_address"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/spoqahansansneoregular"
-                android:textStyle="bold"
-                android:text="주소"
-                android:layout_weight="1.7"
-                android:textSize="15sp" />
-            <TextView
-                android:id="@+id/ub_address_info"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:fontFamily="@font/spoqahansansneoregular"
-                android:text="자세한 주소"
-                android:layout_weight="8.3"
-                android:textSize="15sp" />
-        </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            android:id="@+id/linear_contact"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/ub_status_text">
 
             <TextView
-                android:id="@+id/ub_time"
-                android:layout_width="0dp"
+                android:id="@+id/ub_sort_place"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="1.7"
+                android:layout_marginTop="20dp"
+                android:text="가게를 선택해주세요."
                 android:fontFamily="@font/spoqahansansneoregular"
-                android:text="영업시간"
+                android:textColor="?android:attr/textColorPrimary"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:id="@+id/ub_time_info"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_weight="8.3"
-                android:fontFamily="@font/spoqahansansneoregular"
-                android:text="자세한 시간"
-                android:textSize="15sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:orientation="horizontal"
-            android:weightSum="10"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linear_contact">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ub_status_text" />
 
             <TextView
-                android:id="@+id/ub_contact"
-                android:layout_width="0dp"
+                android:id="@+id/ub_place_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="1.7"
-                android:fontFamily="@font/spoqahansansneoregular"
-                android:text="연락처"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
+                android:layout_marginTop="8dp"
+                android:textSize="25sp"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:text="가게 이름"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ub_sort_place" />
 
             <TextView
-                android:id="@+id/ub_contact_info"
-                android:layout_width="0dp"
+                android:id="@+id/ub_service_banner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_weight="8.3"
-                android:fontFamily="@font/spoqahansansneoregular"
-                android:text="자세한 연락처"
-                android:textSize="15sp"/>
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:textAlignment="center"
+                android:fontFamily="@font/spoqahansansneobold"
+                android:text="@string/ub_service_banner"
+                android:background="@color/back_blue" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ub_place_name">
+
+                <TextView
+                    android:id="@+id/ub_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:textStyle="bold"
+                    android:text="주소"
+                    android:layout_weight="1.7"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/ub_address_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="자세한 주소"
+                    android:layout_weight="8.3"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:id="@+id/linear_contact"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <TextView
+                    android:id="@+id/ub_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1.7"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="영업시간"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/ub_time_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="8.3"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="자세한 시간"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_contact">
+
+                <TextView
+                    android:id="@+id/ub_contact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1.7"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="연락처"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/ub_contact_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="8.3"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="자세한 연락처"
+                    android:textSize="15sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear_contact">
+
+                <TextView
+                    android:id="@+id/ub_menu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1.7"
+                    android:fontFamily="@font/spoqahansansneoregular"
+                    android:text="메뉴"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="8.3" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="7dp">
+
+                        <TextView
+                            android:id="@+id/ub_menu_item_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="메뉴1"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/ub_menu_list_price_1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="18dp"
+                            android:textAlignment="textEnd"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="가격"
+                            android:textSize="15sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="7dp">
+
+                        <TextView
+                            android:id="@+id/ub_menu_item_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="메뉴2"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/ub_menu_list_price_2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="18dp"
+                            android:textAlignment="textEnd"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="가격"
+                            android:textSize="15sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="7dp">
+
+                        <TextView
+                            android:id="@+id/ub_menu_item_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="14dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="메뉴3"
+                            android:textSize="15sp"/>
+
+                        <TextView
+                            android:id="@+id/ub_menu_list_price_3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="18dp"
+                            android:textAlignment="textEnd"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/spoqahansansneoregular"
+                            android:text="가격"
+                            android:textSize="15sp"/>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
 
