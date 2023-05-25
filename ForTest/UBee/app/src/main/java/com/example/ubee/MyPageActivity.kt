@@ -28,8 +28,12 @@ class MyPageActivity : AppCompatActivity() {
 
         // 사용자 이메일 정보 받아오기
         uid = intent.getStringExtra("uid").toString()
-        // name 데이터 받아온 후 이름 칸에 표시 하기
+        // name 데이터 받아온 후 마이페이지에 표시하기
         val nameText = findViewById<TextView>(R.id.userNameText)
+        val emailText = findViewById<TextView>(R.id.emailText)
+        val nameText2 = findViewById<TextView>(R.id.userNameText2)
+        val phoneNum = findViewById<TextView>(R.id.phoneNumberText)
+        val borrow = findViewById<TextView>(R.id.rentalText)
         db.collection("userData")
             .get()
             .addOnCompleteListener { task ->
@@ -37,20 +41,22 @@ class MyPageActivity : AppCompatActivity() {
                     for(i in task.result!!){
                         if(i.id == uid){
                             val userName = i.data["name"].toString()
+                            val phoneNumber = i.data["phoneNum"].toString()
+                            val borrowNumber = i.data["borrow"].toString()
                             nameText.setText(userName)
+                            nameText2.setText(userName)
+                            phoneNum.setText(phoneNumber)
+                            emailText.setText(uid)
+                            if(borrowNumber == "1"){
+                                borrow.setText("미대여중")
+                            }else if (borrowNumber == "2"){
+                                borrow.setText("대여중")
+                            }
                         }
                     }
                 }
             }
-        // email 데이터 받아온 후 이메일 칸에 표시 하기
-        val emailText = findViewById<TextView>(R.id.emailText)
-        db.collection("userData")
-            .get()
-            .addOnCompleteListener { task ->
-                if(task.isSuccessful){
-                    emailText.setText(uid)
-                }
-            }
+
 
 
         //툴바 셋팅

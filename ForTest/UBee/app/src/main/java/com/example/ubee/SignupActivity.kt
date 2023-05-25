@@ -93,7 +93,8 @@ class SignupActivity : AppCompatActivity() {
             "email" to binding.authEmailEditView.text.toString(),
             "name" to binding.editTextTextPersonName.text.toString(),
             "identityNum" to binding.editTextTextPersonName3.text.toString(),
-            "phoneNum" to binding.editTextTextPhoneNum.text.toString()
+            "phoneNum" to binding.editTextTextPhoneNum.text.toString(),
+            "borrow" to "1"
         )
 
         MyApplication.db.collection("userData")
