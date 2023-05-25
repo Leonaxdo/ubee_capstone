@@ -1,11 +1,14 @@
 package com.example.ubee
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build.VERSION_CODES.M
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.telephony.PhoneNumberFormattingTextWatcher
 import android.view.MenuItem
 import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
@@ -22,13 +25,18 @@ class SignupActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySignupBinding
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //여기서부터 수정
 
+        // 전화번호 하이픈 추가
+        val telEdit: EditText = findViewById(R.id.editTextTextPhoneNum)
+        telEdit.addTextChangedListener(PhoneNumberFormattingTextWatcher())
+
+        //회원가입 버튼 클릭 시
         binding.goSignInBtn.setOnClickListener {
             val email = binding.authEmailEditView.text.toString()
             val password = binding.authPasswordEditView.text.toString()
@@ -84,7 +92,8 @@ class SignupActivity : AppCompatActivity() {
         val data = mapOf(
             "email" to binding.authEmailEditView.text.toString(),
             "name" to binding.editTextTextPersonName.text.toString(),
-            "identityNum" to binding.editTextTextPersonName3.text.toString()
+            "identityNum" to binding.editTextTextPersonName3.text.toString(),
+            "phoneNum" to binding.editTextTextPhoneNum.text.toString()
         )
 
         MyApplication.db.collection("userData")

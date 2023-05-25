@@ -16,6 +16,7 @@
     <string name="signup_ssn_hint"><font size="16">주민등록번호 앞 6자리</font></string>
     <string name="signup_email_hint"><font size="16">이메일 입력</font></string>
     <string name="signup_password_hint"><font size="16">비밀번호 입력</font></string>
+    <string name="signup_phonenum_hint"><font size="16">전화번호 입력</font></string>
     <string name="signup_signnum_hint"><font size="16">인증번호 입력</font></string>
     <string name="uv_num"><font color="#E01919" size="16">0</font></string>
     <string name="rain_num"><font color="#1757A6" size="16">0</font></string>
