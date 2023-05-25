@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="마이페이지"
+            android:fontFamily="@font/spoqahansansneobold"
             android:textColor="@color/black"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -31,91 +32,307 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="47dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="330dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:layout_weight="1"
         android:src="@drawable/ic_app_icon"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_map" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_map"/>
 
     <TextView
         android:id="@+id/sayHelloText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="289dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/spoqahansansneobold"
         android:text="우비를 찾아주셔서 감사합니다."
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.008"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
-    <TextView
-        android:id="@+id/userName"
+    <ImageView
+        android:id="@+id/header_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="346dp"
-        android:text="이름"
-        android:textColor="#5CB4D9"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sayHelloText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:srcCompat="@drawable/header_icon" />
 
     <TextView
         android:id="@+id/userNameText"
-        android:layout_width="350dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:text="Empty"
-        android:textColor="@color/black"
-        android:textSize="30sp"
-        android:paddingLeft="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userName"
-        android:background="@drawable/mypageedge"/>
-
-    <TextView
-        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="346dp"
-        android:text="이메일"
-        android:textColor="#5CB4D9"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/spoqahansansneobold"
+        android:text="Name"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/header_icon"
+        app:layout_constraintTop_toTopOf="@+id/header_icon" />
+
+    <TextView
+        android:id="@+id/rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/spoqahansansneoregular"
+        android:text="일반등급"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/header_icon"
         app:layout_constraintTop_toBottomOf="@+id/userNameText" />
 
     <TextView
-        android:id="@+id/emailText"
-        android:layout_width="350dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:text="Empty"
+        android:id="@+id/ub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/spoqahansansneoregular"
+        android:text="우비정보"
+        android:textSize="14sp"
+        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="30sp"
-        android:paddingLeft="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email"
-        android:background="@drawable/mypageedge"/>
+        app:layout_constraintTop_toBottomOf="@+id/rank" />
 
+    <View
+        android:id="@+id/horizontal_line1"
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="10dp"
+        android:background="#4682B4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ub_title" />
+
+    <LinearLayout
+        android:id="@+id/ub_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line1"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="대여여부"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:id="@+id/rentalText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="(대여중/미대여)"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="대여위치"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="-"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="대여시간"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="-"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/my_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/spoqahansansneoregular"
+        android:text="회원정보"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ub_layout" />
+
+    <View
+        android:id="@+id/horizontal_line"
+        android:layout_width="wrap_content"
+        android:layout_height="0.3dp"
+        android:layout_marginTop="10dp"
+        android:background="#4682B4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_title" />
+
+    <LinearLayout
+        android:id="@+id/my_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_line"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="고객명"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:id="@+id/userNameText2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="고객명"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="비밀번호"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="******"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="이메일"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="이메일"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:layout_marginStart="16dp"
+                android:text="연락처"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+            <TextView
+                android:id="@+id/phoneNumberText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="8"
+                android:text="연락처"
+                android:textColor="@color/black"
+                android:fontFamily="@font/spoqahansansneoregular"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 
