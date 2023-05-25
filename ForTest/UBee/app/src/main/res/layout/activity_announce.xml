@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#e8f8ff"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AnnounceActivity">
@@ -26,4 +27,15 @@
             android:text="우비 공지 사항"
             android:layout_gravity="center"/>
     </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/event_recycler"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_map"
+        tools:listitem="@layout/eventlist_layout" />
 </androidx.constraintlayout.widget.ConstraintLayout>
