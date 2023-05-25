@@ -77,6 +77,8 @@ class HomeFragment : Fragment() {
         retrofitWorkR(rain_data, rain_time)
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -122,6 +124,12 @@ class HomeFragment : Fragment() {
             tab, position ->
         }.attach()
         binding.eventViewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+        // 메인 화면 날짜 적용
+        val current = LocalDateTime.now()
+        val formatter_date = DateTimeFormatter.ofPattern("MM월 dd일")
+        val home_date = current.format(formatter_date)
+        binding.nowDate.text = "TODAY ($home_date) 까지"
 
         return binding.root
     }
