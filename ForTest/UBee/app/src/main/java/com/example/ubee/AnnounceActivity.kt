@@ -2,6 +2,8 @@ package com.example.ubee
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.ubee.adapter.EventRecyclerAdapter
+import com.example.ubee.adapter.NoticeRecyclerAdapter
 import com.example.ubee.databinding.ActivityAnnounceBinding
 
 class AnnounceActivity : AppCompatActivity() {
@@ -18,6 +20,9 @@ class AnnounceActivity : AppCompatActivity() {
         binding.toolbarMap.setNavigationOnClickListener {
             finish()
         }
+
+        binding.eventRecycler.adapter = NoticeRecyclerAdapter()
+
 
         setContentView(binding.root)
     }
