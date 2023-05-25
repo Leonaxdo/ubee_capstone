@@ -146,7 +146,7 @@ class HomeFragment : Fragment() {
         val service = RetrofitApi.uvService
 
         // RetrofitApi의 형식대로 값 넘기기
-        service.getEmgMedData("nGo5x8Xykd2+xqgTIOehhXd4Xf+0pLcBs5dlL8bhawf5TIS5DLCCEF6qF54BtVg4A5tYFQDnO45qdtsHRL9Qvg==", "JSON", "1100000000", time)
+        service.getUvData("${R.string.uv_key}", "JSON", "1100000000", time)
             .enqueue(object : Callback<UvResponse> {
                 override fun onResponse(
                     call: Call<UvResponse>,
@@ -186,7 +186,7 @@ class HomeFragment : Fragment() {
         val service = RetrofitApiR.rainService
 
         // RetrofitApi의 형식대로 값 넘기기
-        service.getRainData("nGo5x8Xykd2+xqgTIOehhXd4Xf+0pLcBs5dlL8bhawf5TIS5DLCCEF6qF54BtVg4A5tYFQDnO45qdtsHRL9Qvg==",
+        service.getRainData("${R.string.rain_key}",
                             "1", "1000", "JSON", date, time, "63", "125")
             .enqueue(object : Callback<RainResponse> {
                 override fun onResponse(
@@ -195,7 +195,7 @@ class HomeFragment : Fragment() {
                 ) {
                     if (response.isSuccessful) {
 //                        Log.d("TAG", response.body().toString())
-                        result_rain = response.body()?.response?.body?.items?.item?.get(2)?.obsrValue ?: "-1"
+                        result_rain = response.body()?.response?.body?.items?.item?.get(2)?.obsrValue ?: "0"
 //                        Log.d("pasakResult_rain", "$result_rain")
 //                        Log.d("pasakDate_rain", date)
 //                        Log.d("pasakTime_rain", time)

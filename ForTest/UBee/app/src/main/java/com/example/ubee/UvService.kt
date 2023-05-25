@@ -7,7 +7,7 @@ import retrofit2.http.Query
 // UV
 interface UvService {
     @GET("getUVIdxV4")
-    fun getEmgMedData(@Query("ServiceKey") ServiceKey: String,
+    fun getUvData(@Query("ServiceKey") ServiceKey: String,
                       @Query("dataType") dataType: String,
                       @Query("areaNo") areaNo: String,
                       @Query("time") time: String): Call<UvResponse>
