@@ -146,7 +146,7 @@ class HomeFragment : Fragment() {
         val service = RetrofitApi.uvService
 
         // RetrofitApi의 형식대로 값 넘기기
-        service.getUvData("${R.string.uv_key}", "JSON", "1100000000", time)
+        service.getUvData(getString(R.string.uv_key), "JSON", "1100000000", time)
             .enqueue(object : Callback<UvResponse> {
                 override fun onResponse(
                     call: Call<UvResponse>,
@@ -186,7 +186,7 @@ class HomeFragment : Fragment() {
         val service = RetrofitApiR.rainService
 
         // RetrofitApi의 형식대로 값 넘기기
-        service.getRainData("${R.string.rain_key}",
+        service.getRainData(getString(R.string.rain_key),
                             "1", "1000", "JSON", date, time, "63", "125")
             .enqueue(object : Callback<RainResponse> {
                 override fun onResponse(
