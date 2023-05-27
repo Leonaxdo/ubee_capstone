@@ -204,13 +204,13 @@ class HomeFragment : Fragment() {
                         binding.rainNum.setTextColor(Color.BLUE) // 강수량 색상 지정
 
                         //강수량 아이콘 지정
-                        if((result_rain?.toInt() ?: 0) <= 0) { // 비 안옴
+                        if((result_rain?.toFloat() ?: 0f) <= 0f) { // 비 안옴
                             binding.rainIcon.setImageResource(R.drawable.rain_icon_sun)
-                        }else if((result_rain?.toInt() ?: 0) < 3) { // 약한비
+                        }else if((result_rain?.toFloat() ?: 0f) < 3f) { // 약한비
                             binding.rainIcon.setImageResource(R.drawable.rain_icon_1)
-                        }else if((result_rain?.toInt() ?: 0) < 15) { // 보통비
+                        }else if((result_rain?.toFloat() ?: 0f) < 15f) { // 보통비
                             binding.rainIcon.setImageResource(R.drawable.rain_icon_2)
-                        }else if((result_rain?.toInt() ?: 0) < 30) { // 강한비
+                        }else if((result_rain?.toFloat() ?: 0f) < 30f) { // 강한비
                             binding.rainIcon.setImageResource(R.drawable.rain_icon_3)
                         }else { // 매우 강한비
                             binding.rainIcon.setImageResource(R.drawable.rain_icon_4)
